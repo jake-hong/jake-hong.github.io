@@ -33,10 +33,14 @@ author:
   name                  : "Jake Hong"
   bio                   : "Software Engineer"
   location              : "Seoul, South Korea"
+  email                 : "hongse21@gmail.com"
   links:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/jake-hong"
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "mailto:hongse21@gmail.com"
 
 # Site Settings
 timezone                : "Asia/Seoul"
