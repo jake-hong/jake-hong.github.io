@@ -1,175 +1,37 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
-#
-# If you need help with YAML syntax, here are some quick references for you:
-# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
-# https://learnxinyminutes.com/docs/yaml/
-#
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
-
 # Site Settings
-locale                   : "en-US"
-title                    : "To infinity and beyond"
-title_separator         : "|"
-subtitle                : "개발자의 성장 기록과 기술 공유 공간"
-name                    : "Jake Hong"
-description             : "Today I Learned와 깊이 있는 기술 글을 담은 블로그입니다."
-url                     : "https://jake-hong.github.io"
-baseurl                 : ""
+title: "Jake Hong"
+description: "Software Engineer & Blockchain Developer"
+baseurl: ""
+url: "https://jake-hong.github.io"
+timezone: "Asia/Seoul"
+encoding: "utf-8"
 
-# Site Author
+# Author
 author:
-  name                  : "Jake Hong"
-  bio                   : "Software Engineer"
-  location              : "Seoul, South Korea"
-  links:
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/jake-hong"
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
-      url: "mailto:hongse21@gmail.com"
+  name: "Jake Hong"
+  bio: "Software Engineer"
+  location: "Seoul, South Korea"
+  email: "hongse21@gmail.com"
+  github: "jake-hong"
 
-# Site Settings
-timezone                : "Asia/Seoul"
-encoding                : "utf-8"
-markdown                : kramdown
-highlighter             : rouge
-permalink               : /:categories/:title/
-paginate                : 5
-paginate_path           : /page:num/
-future                  : false
-unpublished             : false
-allow_duplicate_posts   : false
+# Build settings
+markdown: kramdown
+highlighter: rouge
+permalink: /:title/
+paginate: 10
+paginate_path: "/page:num/"
 
-# Collections
-collections:
-  til:
-    output: true
-    permalink: /:collection/:name/
-  deep-dive:
-    output: true
-    permalink: /:collection/:name/
-  pages:
-    output: true
-    permalink: /:name/
-
-# Defaults
-defaults:
-  # _posts
-  - scope:
-      path: ""
-      type: posts
-    values:
-      layout: single
-      author_profile: true
-      read_time: true
-      comments: false
-      share: true
-      related: true
-      sidebar:
-        nav: "main"
-  # _til
-  - scope:
-      path: ""
-      type: til
-    values:
-      layout: single
-      author_profile: true
-      read_time: true
-      comments: false
-      share: true
-      related: true
-      sidebar:
-        nav: "main"
-  # _deep-dive
-  - scope:
-      path: ""
-      type: deep-dive
-    values:
-      layout: single
-      author_profile: true
-      read_time: true
-      comments: false
-      share: true
-      related: true
-      sidebar:
-        nav: "main"
-
-# Plugins - GitHub Pages 호환
+# Plugins
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
-  - jekyll-gist
   - jekyll-feed
-  - jekyll-include-cache
-  - jekyll-remote-theme
 
-# Exclude from processing.
-# The following items will not be processed, by default.
-# Any item listed under the `exclude:` key here will be automatically added to
-# the internal "default list".
-#
-# Excluded items can be processed by explicitly listing the directories or
-# their entries' file path in the `include:` list.
-#
+# Exclude
 exclude:
-  - .sass-cache/
-  - .jekyll-cache/
-  - gemfiles/
   - Gemfile
   - Gemfile.lock
-  - node_modules/
-  - vendor/bundle/
-  - vendor/cache/
-  - vendor/gems/
-  - vendor/ruby/
-
-# Theme - GitHub Pages 호환을 위해 remote_theme 사용
-remote_theme: "mmistakes/minimal-mistakes@4.27.3"
-
-# Site Footer
-footer:
-  links:
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      url: "https://github.com/jake-hong"
-    - label: "Email"
-      icon: "fas fa-fw fa-envelope-square"
-      url: "mailto:hongse21@gmail.com"
-
-# Site Search
-search: true
-search_full_content: true
-search_provider: "lunr"
-lunr:
-  index: true
-  exclude: []
-
-# Sidebar Navigation
-sidebar:
-  nav: "main"
-  toc: true
-  toc_label: "목차"
-  toc_icon: "fas fa-list"
-  sticky: true
-
-# Dark Mode
-dark_mode: true
-dark_theme: "dark"
-light_theme: "light"
-
-# GitHub Data
-repository: "jake-hong/jake-hong.github.io"
-github: [metadata]
+  - node_modules
+  - vendor
+  - .sass-cache
+  - .jekyll-cache

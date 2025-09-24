@@ -1,11 +1,10 @@
 ---
-layout: single
-title: "Web3 개발 환경 구축 가이드-테스트 게시글"
-date: 2024-01-28
-categories: [web3, 개발환경]
+layout: post
+title: "Web3 개발 환경 구축 가이드 - 완벽한 시작"
+date: 2025-09-22 10:00:00 +0900
+categories: [web3]
 tags: [web3, ethereum, development, setup, truffle, hardhat]
-sidebar:
-  nav: "main"
+description: "Web3 개발을 위한 완벽한 환경 설정과 도구 가이드입니다."
 ---
 
 Web3 개발을 시작하기 위해 필요한 모든 도구와 환경을 설정하는 방법을 정리했습니다.

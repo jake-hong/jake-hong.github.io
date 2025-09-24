@@ -1,16 +1,13 @@
 ---
-layout: single
+layout: post
 title: "Solidity 기본 문법과 스마트 컨트랙트 구조"
-date: 2024-01-30
-categories: [til]
+date: 2025-09-05 10:00:00 +0900
+categories: [blockchain]
 tags: [solidity, ethereum, smart-contract, web3]
-sidebar:
-  nav: "main"
+description: "Solidity의 기본 문법과 스마트 컨트랙트 구조를 정리했습니다."
 ---
 
-# Solidity 기본 문법과 스마트 컨트랙트 구조
-
-## 📚 오늘 배운 것
+## 오늘 배운 것
 
 ### 1. Solidity 기본 문법
 
@@ -20,11 +17,11 @@ pragma solidity ^0.8.0;
 
 contract HelloWorld {
     string public message;
-    
+
     constructor(string memory _message) {
         message = _message;
     }
-    
+
     function updateMessage(string memory _newMessage) public {
         message = _newMessage;
     }
@@ -53,13 +50,13 @@ contract HelloWorld {
 - **pure**: 상태를 읽거나 쓰지 않음
 - **payable**: 이더를 받을 수 있음
 
-## 🔍 핵심 포인트
+## 핵심 포인트
 
 1. **가스 최적화**: 불필요한 연산을 피하고 효율적인 코드 작성
 2. **보안**: 재진입 공격, 오버플로우 등 보안 취약점 주의
 3. **이벤트**: 중요한 상태 변화를 로그로 기록
 
-## 📝 다음 학습 계획
+## 다음 학습 계획
 
 - OpenZeppelin 라이브러리 사용법
 - ERC-20 토큰 구현

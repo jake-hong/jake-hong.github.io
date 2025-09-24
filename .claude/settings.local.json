@@ -2,7 +2,15 @@
   "permissions": {
     "allow": [
       "Bash(export:*)",
-      "Bash(bundle exec jekyll serve:*)"
+      "Bash(bundle exec jekyll serve:*)",
+      "Bash(rbenv global:*)",
+      "Bash(rbenv:*)",
+      "Bash(ruby --version)",
+      "Bash(gem install:*)",
+      "Bash(bundle install:*)",
+      "Bash(grep:*)",
+      "Read(//var/folders/z6/cnc8yr9d27qdblddy_k3xj5m0000gn/T/TemporaryItems/NSIRD_screencaptureui_hwJ7rv/**)",
+      "Bash(mkdir:*)"
     ],
     "deny": [],
     "ask": []

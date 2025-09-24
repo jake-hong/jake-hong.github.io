@@ -1,0 +1,72 @@
+---
+layout: default
+title: "Posts"
+description: "모든 글을 한 곳에서 확인하세요"
+---
+
+<section class="blog-header">
+    <div class="blog-header-container">
+        <h1 class="blog-title">All Posts</h1>
+        <p class="blog-description">개발하며 배운 것들과 기술 탐구를 기록합니다</p>
+    </div>
+</section>
+
+<section class="blog-content">
+    <div class="blog-container">
+        {% if site.posts.size > 0 %}
+        <div class="posts-grid">
+            {% for post in site.posts %}
+            <article class="post-card">
+                <div class="post-card-header">
+                    {% if post.categories.size > 0 %}
+                    <div class="post-card-categories">
+                        <span class="post-card-category">{{ post.categories[0] | upcase }}</span>
+                    </div>
+                    {% endif %}
+                    <time class="post-card-date">{{ post.date | date: "%Y.%m.%d" }}</time>
+                </div>
+
+                <div class="post-card-content">
+                    <h2 class="post-card-title">
+                        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                    </h2>
+                    {% if post.description %}
+                    <p class="post-card-excerpt">{{ post.description }}</p>
+                    {% else %}
+                    <p class="post-card-excerpt">{{ post.excerpt | strip_html | truncate: 150 }}</p>
+                    {% endif %}
+
+                    {% if post.tags.size > 0 %}
+                    <div class="post-tags">
+                        {% for tag in post.tags limit:3 %}
+                        <span class="post-tag">{{ tag }}</span>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                </div>
+
+                <div class="post-card-footer">
+                    <a href="{{ post.url | relative_url }}" class="read-more">
+                        <span>Read more</span>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                    <div class="post-card-meta">
+                        <span class="reading-time">{{ post.content | number_of_words | divided_by: 200 | plus: 1 }} min read</span>
+                    </div>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+
+
+        {% else %}
+        <div class="no-posts">
+            <div class="no-posts-icon">
+                <i class="fas fa-pen-nib"></i>
+            </div>
+            <h3>아직 글이 없습니다</h3>
+            <p>첫 번째 글을 작성해보세요!</p>
+        </div>
+        {% endif %}
+    </div>
+</section>

@@ -1,20 +1,17 @@
 ---
-layout: single
+layout: post
 title: "이더리움 아키텍처와 EVM 동작 원리"
-date: 2024-01-25
-categories: [deep-dive]
+date: 2025-09-18 16:00:00 +0900
+categories: [blockchain]
 tags: [ethereum, evm, blockchain, architecture, web3]
-sidebar:
-  nav: "main"
+description: "이더리움의 핵심 구조와 EVM의 동작 원리를 깊이 있게 분석합니다."
 ---
 
-# 이더리움 아키텍처와 EVM 동작 원리
-
-## 🏗️ 이더리움 아키텍처 개요
+## 이더리움 아키텍처 개요
 
 이더리움은 단순한 암호화폐가 아닌 **분산 컴퓨팅 플랫폼**입니다. 스마트 컨트랙트를 실행할 수 있는 가상 머신인 EVM(Ethereum Virtual Machine)을 중심으로 구성되어 있습니다.
 
-## 🔧 EVM (Ethereum Virtual Machine)
+## EVM (Ethereum Virtual Machine)
 
 ### 1. EVM의 역할
 
@@ -46,7 +43,7 @@ function setValue(uint256 _value) public {
 }
 ```
 
-## 🌐 이더리움 네트워크 구조
+## 이더리움 네트워크 구조
 
 ### 1. 노드 유형
 
@@ -64,7 +61,7 @@ function setValue(uint256 _value) public {
 - 검증자들이 ETH를 스테이킹하여 블록 검증
 - 에너지 효율적, 빠른 처리 속도
 
-## 🔄 트랜잭션 처리 과정
+## 트랜잭션 처리 과정
 
 1. **트랜잭션 생성**: 사용자가 서명하여 생성
 2. **메모리 풀**: 대기 중인 트랜잭션들
@@ -72,7 +69,7 @@ function setValue(uint256 _value) public {
 4. **실행**: EVM에서 스마트 컨트랙트 실행
 5. **상태 업데이트**: 결과를 블록체인에 기록
 
-## 💡 실제 구현 예시
+## 실제 구현 예시
 
 ### 간단한 스마트 컨트랙트
 
@@ -82,21 +79,21 @@ pragma solidity ^0.8.0;
 
 contract SimpleStorage {
     uint256 private storedData;
-    
+
     event DataStored(uint256 indexed data);
-    
+
     function set(uint256 x) public {
         storedData = x;
         emit DataStored(x);
     }
-    
+
     function get() public view returns (uint256) {
         return storedData;
     }
 }
 ```
 
-## 🚀 최적화 전략
+## 최적화 전략
 
 ### 1. 가스 최적화
 
@@ -110,7 +107,7 @@ contract SimpleStorage {
 - **Integer Overflow**: SafeMath 사용
 - **Access Control**: 적절한 권한 관리
 
-## 📊 성능 비교
+## 성능 비교
 
 | 특성 | 이더리움 | Polygon | Arbitrum |
 |------|----------|---------|----------|
@@ -118,14 +115,8 @@ contract SimpleStorage {
 | 가스비 | 높음 | 낮음 | 낮음 |
 | 보안 | 높음 | 중간 | 높음 |
 
-## 🔮 미래 전망
+## 미래 전망
 
 - **EIP-4844 (Proto-Danksharding)**: L2 확장성 개선
 - **Account Abstraction**: 사용자 경험 향상
 - **Zero-Knowledge Proofs**: 프라이버시 강화
-
-## 📚 참고 자료
-
-- [Ethereum Yellow Paper](https://ethereum.github.io/yellowpaper/paper.pdf)
-- [EVM Opcodes](https://ethereum.org/en/developers/docs/evm/opcodes/)
-- [Gas Optimization](https://docs.openzeppelin.com/learn/developing-smart-contracts)

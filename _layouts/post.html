@@ -1,0 +1,71 @@
+---
+layout: default
+---
+
+<article class="post">
+    <div class="post-container">
+        <header class="post-header">
+            <div class="post-meta">
+                <time class="post-date">{{ page.date | date: "%B %d, %Y" }}</time>
+                {% if page.categories.size > 0 %}
+                <div class="post-categories">
+                    {% for category in page.categories %}
+                    <span class="post-category">{{ category }}</span>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+            <h1 class="post-title">{{ page.title }}</h1>
+            {% if page.description %}
+            <p class="post-description">{{ page.description }}</p>
+            {% endif %}
+        </header>
+
+        <div class="post-content">
+            {{ content }}
+        </div>
+
+        <footer class="post-footer">
+            <div class="post-navigation">
+                {% if page.previous %}
+                <div class="nav-prev">
+                    <a href="{{ page.previous.url | relative_url }}" class="nav-link">
+                        <i class="fas fa-arrow-left"></i>
+                        <div class="nav-text">
+                            <span class="nav-label">Previous</span>
+                            <span class="nav-title">{{ page.previous.title }}</span>
+                        </div>
+                    </a>
+                </div>
+                {% endif %}
+
+                {% if page.next %}
+                <div class="nav-next">
+                    <a href="{{ page.next.url | relative_url }}" class="nav-link">
+                        <div class="nav-text">
+                            <span class="nav-label">Next</span>
+                            <span class="nav-title">{{ page.next.title }}</span>
+                        </div>
+                        <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                {% endif %}
+            </div>
+
+            <div class="post-share">
+                <span class="share-label">Share this post:</span>
+                <div class="share-buttons">
+                    <a href="https://twitter.com/intent/tweet?url={{ site.url }}{{ page.url }}&text={{ page.title }}" target="_blank" class="share-btn twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ site.url }}{{ page.url }}" target="_blank" class="share-btn linkedin">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <button onclick="copyToClipboard('{{ site.url }}{{ page.url }}')" class="share-btn copy">
+                        <i class="fas fa-link"></i>
+                    </button>
+                </div>
+            </div>
+        </footer>
+    </div>
+</article>
