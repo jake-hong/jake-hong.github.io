@@ -104,13 +104,14 @@ defaults:
       sidebar:
         nav: "main"
 
-# Plugins
+# Plugins - GitHub Pages 호환
 plugins:
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-gist
   - jekyll-feed
   - jekyll-include-cache
+  - jekyll-remote-theme
 
 # Exclude from processing.
 # The following items will not be processed, by default.
@@ -132,8 +133,8 @@ exclude:
   - vendor/gems/
   - vendor/ruby/
 
-# Theme
-theme: minimal-mistakes-jekyll
+# Theme - GitHub Pages 호환을 위해 remote_theme 사용
+remote_theme: "mmistakes/minimal-mistakes@4.27.3"
 
 # Site Footer
 footer:
