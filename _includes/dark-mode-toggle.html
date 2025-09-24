@@ -1,0 +1,40 @@
+<!-- 하단 다크모드 토글 버튼 -->
+<div class="dark-mode-toggle-bottom">
+  <button class="toggle-bottom" id="dark-mode-toggle" aria-label="다크모드 토글">
+    <i class="fas fa-moon" id="theme-icon"></i>
+  </button>
+</div>
+
+<script>
+// 다크모드 토글 기능
+document.addEventListener('DOMContentLoaded', function() {
+  const toggle = document.getElementById('dark-mode-toggle');
+  const themeIcon = document.getElementById('theme-icon');
+  const body = document.body;
+  
+  // 저장된 테마 불러오기
+  const savedTheme = localStorage.getItem('theme') || 'light';
+  body.setAttribute('data-theme', savedTheme);
+  
+  // 아이콘 업데이트
+  updateIcon(savedTheme);
+  
+  // 토글 버튼 클릭 이벤트
+  toggle.addEventListener('click', function() {
+    const currentTheme = body.getAttribute('data-theme');
+    const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+    
+    body.setAttribute('data-theme', newTheme);
+    localStorage.setItem('theme', newTheme);
+    updateIcon(newTheme);
+  });
+  
+  function updateIcon(theme) {
+    if (theme === 'dark') {
+      themeIcon.className = 'fas fa-moon';
+    } else {
+      themeIcon.className = 'fas fa-sun';
+    }
+  }
+});
+</script>

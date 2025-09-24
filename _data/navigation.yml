@@ -1,0 +1,10 @@
+# Main navigation
+main:
+  - title: "About"
+    url: "/"
+  - title: "POST"
+    url: "/posts/"
+  - title: "TIL"
+    url: "/til/"
+  - title: "Deep Dive"
+    url: "/deep-dive/"

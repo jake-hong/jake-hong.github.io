@@ -1,0 +1,762 @@
+---
+---
+
+@import "minimal-mistakes";
+
+/* Custom font size adjustments */
+html {
+  font-size: 14px; /* 기본 16px에서 14px로 줄임 */
+}
+
+body {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* 제목 크기 조정 */
+h1 {
+  font-size: 1.8rem; /* 기본보다 작게 */
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.3rem;
+}
+
+h4 {
+  font-size: 1.1rem;
+}
+
+h5, h6 {
+  font-size: 1rem;
+}
+
+/* 사이드바 글씨 크기 */
+.sidebar {
+  font-size: 13px;
+}
+
+.sidebar h2, .sidebar h3 {
+  font-size: 1.2rem;
+}
+
+/* 네비게이션 글씨 크기 */
+.nav__list .nav__item {
+  font-size: 14px;
+}
+
+/* 포스트 제목 크기 */
+.page__title {
+  font-size: 1.8rem;
+}
+
+.archive__item-title {
+  font-size: 1.1rem;
+}
+
+/* 메인 콘텐츠 글씨 크기 */
+.page__content {
+  font-size: 14px;
+}
+
+.page__content p {
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* 코드 블록 글씨 크기 */
+code {
+  font-size: 13px;
+}
+
+pre {
+  font-size: 13px;
+}
+
+/* 인용문 글씨 크기 */
+blockquote {
+  font-size: 14px;
+}
+
+/* 리스트 글씨 크기 */
+ul, ol {
+  font-size: 14px;
+}
+
+/* 테이블 글씨 크기 */
+table {
+  font-size: 13px;
+}
+
+/* 버튼 글씨 크기 */
+.btn {
+  font-size: 13px;
+}
+
+/* 상단 네비게이션 바 숨기기 */
+.masthead {
+  display: none !important;
+}
+
+/* 반응형 햄버거 토글 메뉴 버튼 숨기기 */
+.greedy-nav__toggle {
+  display: none !important;
+}
+
+.masthead__menu {
+  display: none !important;
+}
+
+/* 간단한 상단 바 */
+.simple-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  background: #000000;
+  border-bottom: 1px solid #e0e0e0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+[data-theme="dark"] .simple-header {
+  background: #ffffff;
+  border-bottom-color: #e0e0e0;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 20px;
+}
+
+.site-title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+  .site-title a {
+    color: #000000 !important;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+
+.site-title a:hover {
+  color: #333333;
+}
+
+/* 다크모드에서 검정색 적용 */
+[data-theme="dark"] .site-title a,
+[data-theme="dark"] .simple-header .site-title a,
+[data-theme="dark"] .simple-header h1.site-title a,
+[data-theme="dark"] body .site-title a,
+[data-theme="dark"] .simple-header h1 a,
+[data-theme="dark"] .header-content .site-title a,
+[data-theme="dark"] a,
+[data-theme="dark"] .simple-header a {
+  color: #000000 !important;
+}
+
+[data-theme="dark"] .site-title a:hover {
+  color: #333333 !important;
+}
+
+/* 라이트모드에서 하얀색 적용 - 명시적으로 light 체크 */
+body[data-theme="light"] .site-title a,
+body[data-theme="light"] .simple-header .site-title a,
+body[data-theme="light"] .simple-header h1.site-title a,
+body[data-theme="light"] .simple-header a {
+  color: #ffffff !important;
+}
+
+/* 기본값도 하얀색으로 설정 (라이트모드) */
+body .site-title a,
+body .simple-header .site-title a,
+body .simple-header h1.site-title a {
+  color: #ffffff !important;
+}
+
+/* 상단 바가 추가된 경우 메인 콘텐츠 조정 */
+.initial-content {
+  margin-top: 60px !important;
+}
+
+.page__content {
+  margin-top: 60px !important;
+}
+
+/* 사이드바 스크롤 최적화 - 메뉴만 sticky로 고정, 이름과 bio는 스크롤시 가려짐 */
+.nav__list {
+  position: sticky;
+  top: 60px; /* 헤더 바로 아래 */
+  background: inherit;
+  z-index: 10;
+  padding-top: 20px;
+  margin-top: 30px; /* Email과 ABOUT 사이 간격 줄이기 */
+}
+
+/* author 정보와 네비게이션 사이 간격 조정 */
+.sidebar .author__urls {
+  margin-bottom: 10px !important;
+}
+
+/* 메인 콘텐츠 여백과 너비 조정 */
+.initial-content {
+  margin-top: 60px !important;
+  width: 100% !important;
+  max-width: none !important;
+}
+
+.page__content {
+  width: 100% !important;
+  max-width: none !important;
+}
+
+/* 반응형 제거 - 모든 화면 크기에서 동일한 레이아웃 유지 */
+
+/* 오른쪽 하단 고정 다크 모드 토글 버튼 스타일 */
+.dark-mode-toggle-bottom {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.toggle-bottom {
+  background: transparent;
+  border: 2px solid #ffd700;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: #ffd700;
+  box-shadow: 0 2px 10px rgba(255, 215, 0, 0.3);
+}
+
+.toggle-bottom:hover {
+  background: rgba(255, 215, 0, 0.1);
+  border-color: #ffb300;
+  transform: scale(1.1);
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+}
+
+.toggle-bottom i {
+  font-size: 18px;
+}
+
+/* 태양 아이콘 (라이트모드) - 하얀색 배경 */
+.toggle-bottom .fa-sun {
+  background: #ffffff;
+  border-radius: 50%;
+  padding: 8px;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* 달 아이콘 (다크모드) - 검정색 배경 */
+.toggle-bottom .fa-moon {
+  background: #000000;
+  border-radius: 50%;
+  padding: 8px;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+  /* 이전/다음 버튼 스타일 - 작은 화살표 버튼 */
+  .pagination {
+    margin: 20px 0;
+    text-align: center;
+  }
+
+  .pagination-item {
+    display: inline-block;
+    margin: 0 5px;
+  }
+
+  .pagination-item a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: var(--web3-primary);
+    color: #ffffff;
+    border-radius: 50%;
+    text-decoration: none;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  .pagination-item a:hover {
+    background: var(--web3-secondary);
+    transform: scale(1.1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  .pagination-item .pagination-label {
+    display: none;
+  }
+
+  /* 다크모드에서 이전/다음 버튼 */
+  [data-theme="dark"] .pagination-item a {
+    background: var(--web3-primary);
+    color: #000000;
+  }
+
+  [data-theme="dark"] .pagination-item a:hover {
+    background: var(--web3-secondary);
+    color: #000000;
+  }
+
+.toggle-text {
+  font-size: 14px;
+}
+
+/* Web3/블록체인 테마 색상 */
+:root {
+  --web3-primary: #627eea;      /* Ethereum blue */
+  --web3-secondary: #f7931a;    /* Bitcoin orange */
+  --web3-accent: #00d4aa;       /* Polygon green */
+  --web3-dark: #000000;         /* Dark background - 완전 검정 */
+  --web3-light: #f8f9fa;        /* Light background */
+  --web3-gradient: linear-gradient(135deg, #627eea 0%, #00d4aa 100%);
+  --web3-border: #333333;       /* 다크모드 보더 색상 */
+}
+
+/* 다크모드에서 완전 검정색 강제 적용 */
+[data-theme="dark"] {
+  --web3-dark: #000000;
+  --web3-light: #000000;
+}
+
+/* Web3 테마 적용 - 라이트모드 (검은색 배경, 하얀색 글씨) */
+body {
+  background: #000000;
+  color: #ffffff;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* 다크 모드에서 Web3 색상 적용 - 다크모드 (하얀색 배경, 검은색 글씨) */
+[data-theme="dark"] {
+  --web3-primary: #627eea;
+  --web3-secondary: #f7931a;
+  --web3-accent: #00d4aa;
+  --web3-dark: #000000;
+  --web3-light: #ffffff;
+  --web3-border: #e0e0e0;
+}
+
+[data-theme="dark"] body {
+  background: #ffffff !important;
+  color: #000000 !important;
+}
+
+/* 다크모드 전역 적용 - 모든 요소를 하얀색 배경으로 */
+[data-theme="dark"] * {
+  background: #ffffff !important;
+  color: #000000 !important;
+}
+
+/* 다크모드에서 특정 배경 요소들도 하얀색으로 */
+[data-theme="dark"] html,
+[data-theme="dark"] body,
+[data-theme="dark"] .page,
+[data-theme="dark"] .page__inner-wrap,
+[data-theme="dark"] .page__content,
+[data-theme="dark"] .page__footer,
+[data-theme="dark"] .footer-col-wrapper,
+[data-theme="dark"] .footer-col,
+[data-theme="dark"] .archive,
+[data-theme="dark"] .home,
+[data-theme="dark"] .wrapper,
+[data-theme="dark"] .initial-content,
+[data-theme="dark"] .main,
+[data-theme="dark"] .main-content,
+[data-theme="dark"] .content,
+[data-theme="dark"] .page__inner,
+[data-theme="dark"] .page__content .page__inner-wrap,
+[data-theme="dark"] .page__content .page__inner-wrap .page__content {
+  background: #ffffff !important;
+  color: #000000 !important;
+}
+
+/* 다크모드에서 특정 요소들만 색상 유지 */
+[data-theme="dark"] .web3-primary,
+[data-theme="dark"] .tag-web3,
+[data-theme="dark"] .tag-blockchain,
+[data-theme="dark"] .tag-defi,
+[data-theme="dark"] .site-title a,
+[data-theme="dark"] .nav__item a:hover {
+  color: var(--web3-primary) !important;
+}
+
+[data-theme="dark"] .toggle-bottom {
+  background: transparent !important;
+  border-color: #ffd700 !important;
+  color: #ffd700 !important;
+  box-shadow: 0 2px 10px rgba(255, 215, 0, 0.3);
+}
+
+[data-theme="dark"] .toggle-bottom:hover {
+  background: rgba(255, 215, 0, 0.1) !important;
+  border-color: #ffb300 !important;
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+}
+
+/* 다크모드 보더 색상 변경 */
+[data-theme="dark"] .simple-header {
+  border-bottom-color: var(--web3-border) !important;
+}
+
+[data-theme="dark"] .sidebar {
+  border-right-color: var(--web3-border) !important;
+}
+
+[data-theme="dark"] .github-stats {
+  border-color: var(--web3-border) !important;
+}
+
+/* 다크모드에서 모든 텍스트 색상 강제 설정 */
+[data-theme="dark"] p,
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] h4,
+[data-theme="dark"] h5,
+[data-theme="dark"] h6,
+[data-theme="dark"] li,
+[data-theme="dark"] span,
+[data-theme="dark"] div,
+[data-theme="dark"] .page__title,
+[data-theme="dark"] .page__meta,
+[data-theme="dark"] .page__content,
+[data-theme="dark"] .archive__item-title,
+[data-theme="dark"] .archive__item-excerpt {
+  color: #000000 !important;
+}
+
+/* 다크모드에서 링크 색상 */
+[data-theme="dark"] a {
+  color: var(--web3-primary) !important;
+}
+
+[data-theme="dark"] a:hover {
+  color: var(--web3-accent) !important;
+}
+
+/* 다크모드 강제 적용 - 모든 가능한 선택자 */
+[data-theme="dark"] .page__content,
+[data-theme="dark"] .page__content *,
+[data-theme="dark"] .page__inner-wrap,
+[data-theme="dark"] .page__inner-wrap *,
+[data-theme="dark"] .main,
+[data-theme="dark"] .main *,
+[data-theme="dark"] .content,
+[data-theme="dark"] .content *,
+[data-theme="dark"] .initial-content,
+[data-theme="dark"] .initial-content *,
+[data-theme="dark"] .page__inner,
+[data-theme="dark"] .page__inner *,
+[data-theme="dark"] .page__header,
+[data-theme="dark"] .page__header *,
+[data-theme="dark"] .page__footer,
+[data-theme="dark"] .page__footer *,
+[data-theme="dark"] .footer-col-wrapper,
+[data-theme="dark"] .footer-col-wrapper *,
+[data-theme="dark"] .footer-col,
+[data-theme="dark"] .footer-col *,
+[data-theme="dark"] .page__meta,
+[data-theme="dark"] .page__meta *,
+[data-theme="dark"] .page__share,
+[data-theme="dark"] .page__share *,
+[data-theme="dark"] .page__related,
+[data-theme="dark"] .page__related * {
+  background: #ffffff !important;
+  color: #000000 !important;
+}
+
+/* 다크모드에서 특정 요소들만 색상 유지 */
+[data-theme="dark"] .web3-primary,
+[data-theme="dark"] .tag-web3,
+[data-theme="dark"] .tag-blockchain,
+[data-theme="dark"] .tag-defi,
+[data-theme="dark"] .site-title a,
+[data-theme="dark"] .nav__item a:hover,
+[data-theme="dark"] a {
+  color: var(--web3-primary) !important;
+}
+
+/* 다크모드 완전 강제 적용 - 모든 영역 */
+[data-theme="dark"] {
+  background: #ffffff !important;
+}
+
+[data-theme="dark"] * {
+  background: #ffffff !important;
+  color: #000000 !important;
+}
+
+/* 다크모드에서 모든 배경 요소 강제 하얀색 */
+[data-theme="dark"] html,
+[data-theme="dark"] body,
+[data-theme="dark"] .page,
+[data-theme="dark"] .page__inner-wrap,
+[data-theme="dark"] .page__content,
+[data-theme="dark"] .page__footer,
+[data-theme="dark"] .footer-col-wrapper,
+[data-theme="dark"] .footer-col,
+[data-theme="dark"] .archive,
+[data-theme="dark"] .home,
+[data-theme="dark"] .wrapper,
+[data-theme="dark"] .initial-content,
+[data-theme="dark"] .main,
+[data-theme="dark"] .main-content,
+[data-theme="dark"] .content,
+[data-theme="dark"] .page__inner,
+[data-theme="dark"] .page__header,
+[data-theme="dark"] .page__meta,
+[data-theme="dark"] .page__share,
+[data-theme="dark"] .page__related,
+[data-theme="dark"] .sidebar,
+[data-theme="dark"] .masthead,
+[data-theme="dark"] .simple-header {
+  background: #ffffff !important;
+  color: #000000 !important;
+}
+
+/* 다크모드에서 특정 요소들만 색상 유지 (재정의) */
+[data-theme="dark"] .web3-primary,
+[data-theme="dark"] .tag-web3,
+[data-theme="dark"] .tag-blockchain,
+[data-theme="dark"] .tag-defi,
+[data-theme="dark"] .site-title a,
+[data-theme="dark"] .nav__item a:hover,
+[data-theme="dark"] a {
+  color: var(--web3-primary) !important;
+}
+
+[data-theme="dark"] .toggle-bottom {
+  background: transparent !important;
+  border-color: #ffd700 !important;
+  color: #ffd700 !important;
+  box-shadow: 0 2px 10px rgba(255, 215, 0, 0.3);
+}
+
+[data-theme="dark"] .toggle-bottom:hover {
+  background: rgba(255, 215, 0, 0.1) !important;
+  border-color: #ffb300 !important;
+  box-shadow: 0 4px 15px rgba(255, 215, 0, 0.4);
+}
+
+/* Web3 관련 요소 스타일링 */
+.web3-highlight {
+  background: var(--web3-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  font-weight: bold;
+}
+
+/* 사이드바 Web3 테마 */
+.sidebar {
+  border-right: 1px solid #e0e0e0;
+}
+
+[data-theme="dark"] .sidebar {
+  border-right-color: var(--web3-border);
+}
+
+.sidebar a:hover {
+  color: var(--web3-primary) !important;
+}
+
+/* 네비게이션 Web3 스타일 */
+.nav__list .nav__item a {
+  transition: all 0.3s ease;
+}
+
+.nav__list .nav__item a:hover {
+  color: var(--web3-primary);
+  transform: translateX(5px);
+}
+
+/* Web3 아이콘 스타일 */
+.web3-icon {
+  color: var(--web3-primary);
+  margin-right: 8px;
+}
+
+/* GitHub 통계 Web3 스타일 */
+.github-stats {
+  background: linear-gradient(135deg, rgba(98, 126, 234, 0.1) 0%, rgba(0, 212, 170, 0.1) 100%);
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #e0e0e0;
+  margin: 20px 0;
+}
+
+.github-stats h3 {
+  color: var(--web3-primary);
+  margin-bottom: 15px;
+}
+
+.github-stats ul li {
+  margin: 8px 0;
+  color: var(--web3-dark);
+}
+
+[data-theme="dark"] .github-stats ul li {
+  color: var(--web3-light);
+}
+
+/* Footer 스타일 - 전체 너비로 확장 */
+.page__footer {
+  background: #000000;
+  color: #ffffff;
+  border-top: none !important;
+  width: 100vw !important;
+  margin-left: calc(-50vw + 50%) !important;
+  padding-left: calc(50vw - 50%) !important;
+  padding-right: calc(50vw - 50%) !important;
+  position: relative;
+}
+
+/* Footer 상단 구분선을 전체 너비로 확장 */
+.page__footer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 1px;
+  background-color: #e0e0e0;
+  z-index: 1;
+}
+
+[data-theme="dark"] .page__footer {
+  background: #ffffff;
+  color: #000000;
+  border-top-color: #e0e0e0;
+}
+
+.footer-col-wrapper {
+  background: #000000;
+  color: #ffffff;
+  width: 100% !important;
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+}
+
+[data-theme="dark"] .footer-col-wrapper {
+  background: #ffffff;
+  color: #000000;
+}
+
+.footer-col {
+  background: #000000;
+  color: #ffffff;
+}
+
+[data-theme="dark"] .footer-col {
+  background: #ffffff;
+  color: #000000;
+}
+
+/* Footer 링크 색상 */
+.page__footer a {
+  color: #ffffff;
+}
+
+[data-theme="dark"] .page__footer a {
+  color: #000000;
+}
+
+.page__footer a:hover {
+  color: #cccccc;
+}
+
+[data-theme="dark"] .page__footer a:hover {
+  color: #333333;
+}
+
+/* Web3 관련 태그 스타일 */
+.tag-web3 {
+  background: var(--web3-primary);
+  color: white;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.8em;
+  margin: 2px;
+  display: inline-block;
+}
+
+.tag-blockchain {
+  background: var(--web3-secondary);
+  color: white;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.8em;
+  margin: 2px;
+  display: inline-block;
+}
+
+.tag-defi {
+  background: var(--web3-accent);
+  color: white;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-size: 0.8em;
+  margin: 2px;
+  display: inline-block;
+}
+
+/* 최종 강제 색상 적용 - 라이트모드는 검은색, 다크모드는 하얀색 */
+html body .simple-header .site-title a,
+html body .simple-header h1.site-title a {
+  color: #ffffff !important;
+}
+
+html body[data-theme="dark"] .simple-header .site-title a,
+html body[data-theme="dark"] .simple-header h1.site-title a {
+  color: #000000 !important;
+}
+
+/* 라이트모드에서 명시적으로 하얀색 적용 - 가장 높은 우선순위 */
+html body:not([data-theme="dark"]) .simple-header .site-title a,
+html body:not([data-theme="dark"]) .simple-header h1.site-title a,
+html body[data-theme="light"] .simple-header .site-title a,
+html body[data-theme="light"] .simple-header h1.site-title a {
+  color: #ffffff !important;
+  text-decoration: none !important;
+}
+
+/* 최상위 우선순위로 라이트모드 색상 강제 적용 */
+.simple-header .site-title a[href] {
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .simple-header .site-title a[href] {
+  color: #000000 !important;
+}
